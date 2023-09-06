@@ -7,7 +7,11 @@ export default function AccordionItem({ title, content }) {
   return (
     <div className="accordion-item">
       <button
-        className="accordion-item-title"
+        className={
+          isExpanded
+            ? "accordion-item-title accordion-item-title--expanded"
+            : "accordion-item-title"
+        }
         type="button"
         onClick={() => setIsExpanded(!isExpanded)}
       >
@@ -21,7 +25,14 @@ export default function AccordionItem({ title, content }) {
           }
         />
       </button>
-      <div className="accordion-item-contents" hidden={!isExpanded}>
+      <div
+        className={
+          isExpanded
+            ? "accordion-item-contents accordion-item-contents--expanded"
+            : "accordion-item-contents"
+        }
+        hidden={!isExpanded}
+      >
         {content}
       </div>
     </div>
