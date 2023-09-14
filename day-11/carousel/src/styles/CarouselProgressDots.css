@@ -1,0 +1,26 @@
+.carousel-progress__dots {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+
+  .carousel-progress__dot {
+    cursor: pointer;
+    height: 12px;
+    width: 12px;
+    background-color: aliceblue;
+    border-radius: 50%;
+    border: 0;
+    opacity: 0.8;
+  }
+
+  .carousel-progress__dot--active {
+    background-color: aqua;
+  }
+
+  .carousel-progress__dot:hover {
+    transform: scale(1.3);
+  }
+}

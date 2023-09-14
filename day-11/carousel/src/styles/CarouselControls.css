@@ -1,0 +1,28 @@
+.carousel-controls {
+  list-style: none;
+
+  .carousel-controls__button {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    background: rgba(10, 10, 10, 0.5);
+    color: white;
+    border-radius: 50%;
+    border: 0;
+  }
+
+  .carousel-controls__button:hover {
+    background: rgba(240, 240, 240, 0.5);
+  }
+
+  .carousel-controls__button[data-direction="previous"] {
+    left: 10px;
+  }
+
+  .carousel-controls__button[data-direction="next"] {
+    right: 10px;
+  }
+}

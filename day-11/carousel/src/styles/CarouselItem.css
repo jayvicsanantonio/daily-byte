@@ -1,0 +1,8 @@
+.carousel-item {
+  .carousel-item__image {
+    height: var(--height, 500px);
+    width: var(--width, 800px);
+    object-fit: cover;
+    object-position: center;
+  }
+}

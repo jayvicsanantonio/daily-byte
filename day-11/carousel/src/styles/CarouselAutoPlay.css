@@ -1,0 +1,9 @@
+.carousel-autoplay {
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0);
+  border: 0;
+  position: absolute;
+  bottom: 4px;
+  left: 62%;
+}
