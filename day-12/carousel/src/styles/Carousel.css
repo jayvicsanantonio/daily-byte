@@ -1,0 +1,10 @@
+.carousel {
+  position: relative;
+
+  .carousel__scroll-container {
+    display: flex;
+    height: 500px;
+    width: 800px;
+    overflow: hidden;
+  }
+}

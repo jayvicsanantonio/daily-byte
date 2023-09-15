@@ -1,0 +1,56 @@
+.carousel-controls {
+
+  .carousel-controls__previous-button,
+  .carousel-controls__next-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    border: 0;
+    color: white;
+    height: 44px;
+    width: 44px;
+    cursor: pointer;
+  }
+
+  .carousel-controls__previous-button:hover,
+  .carousel-controls__next-button:hover {
+    background: rgba(255, 255, 255, 0.5);
+  }
+
+  .carousel-controls__previous-button {
+    left: 8px;
+  }
+
+  .carousel-controls__next-button {
+    right: 8px;
+  }
+
+  .carousel-controls__progress-dots {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 16px;
+    display: flex;
+    gap: 12px;
+  }
+
+  .carousel-controls__progress-dot {
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.8);
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    border: 0;
+  }
+
+  .carousel-controls__progress-dot--active {
+    background: red;
+    opacity: 0.8
+  }
+
+  .carousel-controls__progress-dot:hover {
+    transform: scale(1.3);
+  }
+}
