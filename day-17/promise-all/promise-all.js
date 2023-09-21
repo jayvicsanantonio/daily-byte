@@ -6,7 +6,7 @@ export default function promiseAll(promiseArray) {
     }
 
     const values = new Array(promiseArray.length);
-    const pending = promiseArray.length;
+    let pending = promiseArray.length;
 
     promiseArray.forEach(async (promise, index) => {
       try {
