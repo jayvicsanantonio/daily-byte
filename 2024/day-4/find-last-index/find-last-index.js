@@ -1,4 +1,4 @@
-export default function findIndex(
+export default function findLastIndex(
   array,
   predicate,
   fromIndex = array.length - 1
