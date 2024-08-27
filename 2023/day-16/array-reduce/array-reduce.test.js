@@ -6,6 +6,7 @@ const subtract = (prev, curr) => prev - curr;
 const sumOfSquares = (prev, curr, index, array) => prev + curr * array[index];
 const combineObj = (prev, curr) => ({ ...prev, ...curr });
 const combineArr = (prev, curr) => [...prev, curr];
+import { describe, test, expect } from "vitest";
 
 describe("Array.prototype.myReduce", () => {
   test("empty array equals initial value", () => {

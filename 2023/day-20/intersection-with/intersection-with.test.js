@@ -1,4 +1,5 @@
 import intersectionWith from "./intersection-with";
+import { describe, test, expect } from "vitest";
 
 describe("intersectionWith", () => {
   test("should return an empty array when no arrays are provided", () => {

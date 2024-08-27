@@ -1,4 +1,5 @@
 import deepClone from "./deep-clone";
+import { describe, test, expect } from "vitest";
 
 describe("deepClone", () => {
   test("Single primitive value", () => {

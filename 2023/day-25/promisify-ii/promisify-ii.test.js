@@ -1,4 +1,5 @@
 import promisify from "./promisify-ii";
+import { describe, test, expect } from "vitest";
 
 describe("promisify", () => {
   function delayedResolve(cb) {
@@ -28,7 +29,6 @@ describe("promisify", () => {
   describe("use with await", () => {
     describe("resolved", () => {
       test("no arguments", async () => {
-        expect.assertions(1);
         const promisified = promisify(delayedResolve);
         const res = await promisified();
         expect(res).toBe(42);
@@ -87,25 +87,31 @@ describe("promisify", () => {
   });
 
   describe("use without await", () => {
-    test("then", (done) => {
-      expect.assertions(1);
-      const promisified = promisify(delayedResolve);
-      promisified().then((res) => {
-        expect(res).toBe(42);
-        done();
-      });
-    });
-
-    test("catch", (done) => {
-      expect.assertions(1);
-      const promisified = promisify(asyncError);
-      promisified(23)
-        .then()
-        .catch((err) => {
-          expect(err).toBe(23);
+    test(
+      "then",
+      new Promise((done) => {
+        expect.assertions(1);
+        const promisified = promisify(delayedResolve);
+        promisified().then((res) => {
+          expect(res).toBe(42);
           done();
         });
-    });
+      })
+    );
+
+    test(
+      "catch",
+      new Promise((done) => {
+        expect.assertions(1);
+        const promisified = promisify(asyncError);
+        promisified(23)
+          .then()
+          .catch((err) => {
+            expect(err).toBe(23);
+            done();
+          });
+      })
+    );
   });
 
   describe("custom", () => {

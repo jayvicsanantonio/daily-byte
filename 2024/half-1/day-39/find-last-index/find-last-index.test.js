@@ -1,4 +1,5 @@
 import findLastIndex from "./find-last-index";
+import { describe, test, expect } from "vitest";
 
 describe("findLastIndex", () => {
   test("empty array", () => {

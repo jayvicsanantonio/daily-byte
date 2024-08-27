@@ -1,4 +1,5 @@
 import makeCounter from "./make-counter";
+import { describe, test, expect } from "vitest";
 
 describe("makeCounter", () => {
   test("returns a function", () => {

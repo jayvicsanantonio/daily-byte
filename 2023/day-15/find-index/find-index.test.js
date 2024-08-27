@@ -1,4 +1,5 @@
 import findIndex from "./find-index";
+import { describe, test, expect } from "vitest";
 
 describe("findIndex", () => {
   test("empty array", () => {

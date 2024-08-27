@@ -6,6 +6,7 @@ const square = (x) => x * x;
 const negate = (x) => !x;
 const length = (x) => x.length;
 const double = (x) => x * 2;
+import { describe, test, expect } from "vitest";
 
 describe("deepMap", () => {
   describe("primitives", () => {

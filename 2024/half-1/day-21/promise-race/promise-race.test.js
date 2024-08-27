@@ -1,4 +1,5 @@
 import promiseRace from "./promise-race";
+import { describe, test, expect } from "vitest";
 
 describe("promiseRace", () => {
   test("returns a promise", () => {
@@ -6,23 +7,26 @@ describe("promiseRace", () => {
     expect(promise).toBeInstanceOf(Promise);
   });
 
-  test("empty input array", (done) => {
-    expect.assertions(1);
-    const promise = promiseRace([]);
-    expect(promise).toBeInstanceOf(Promise);
-    promise.then(
-      (value) => {
-        expect(value).toBeTruthy();
-      },
-      (reason) => {
-        expect(reason).toBeTruthy();
-      }
-    );
+  test(
+    "empty input array",
+    new Promise((done) => {
+      expect.assertions(1);
+      const promise = promiseRace([]);
+      expect(promise).toBeInstanceOf(Promise);
+      promise.then(
+        (value) => {
+          expect(value).toBeTruthy();
+        },
+        (reason) => {
+          expect(reason).toBeTruthy();
+        }
+      );
 
-    setTimeout(() => {
-      done();
-    }, 10);
-  });
+      setTimeout(() => {
+        done();
+      }, 10);
+    })
+  );
 
   describe("one promise", () => {
     describe("resolve", () => {

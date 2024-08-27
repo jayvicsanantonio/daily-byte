@@ -1,4 +1,5 @@
 import promiseAll from "./promise-all";
+import { describe, test, expect } from "vitest";
 
 describe("promiseAll", () => {
   test("empty input array", async () => {

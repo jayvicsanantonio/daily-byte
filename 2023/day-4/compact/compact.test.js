@@ -1,4 +1,5 @@
 import compact from "./compact";
+import { describe, test, expect } from "vitest";
 
 describe("compact", () => {
   test("empty array", () => {

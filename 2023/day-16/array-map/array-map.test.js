@@ -8,6 +8,7 @@ const usesThis = function (element) {
   return element * this;
 };
 const usesThisArrowFn = (element) => element * this;
+import { describe, test, expect } from "vitest";
 
 describe("Array.prototype.myMap", () => {
   test("empty array", () => {

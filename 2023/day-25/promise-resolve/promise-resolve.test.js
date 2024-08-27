@@ -1,5 +1,6 @@
 import promiseResolve from "./promise-resolve";
 // const promiseResolve = Promise.resolve.bind(Promise);
+import { describe, test, expect } from "vitest";
 
 describe("promiseResolve", () => {
   test("returns promise", () => {
@@ -46,13 +47,11 @@ describe("promiseResolve", () => {
       expect(p).rejects.toStrictEqual(42);
     });
 
-    test("use with then", (done) => {
+    test("use with then", async (done) => {
       expect.assertions(1);
       const p = promiseResolve(new Promise((resolve) => resolve(42)));
-      p.then((result) => {
-        expect(result).toStrictEqual(42);
-        done();
-      });
+      const result = await p;
+      expect(result).toStrictEqual(42);
     });
   });
 
@@ -104,17 +103,15 @@ describe("promiseResolve", () => {
       expect(p).rejects.toStrictEqual(42);
     });
 
-    test("use with then", (done) => {
+    test("use with then", async (done) => {
       expect.assertions(1);
       const p = promiseResolve({
         then(resolve) {
           resolve(42);
         },
       });
-      p.then((result) => {
-        expect(result).toStrictEqual(42);
-        done();
-      });
+      const result = await p;
+      expect(result).toStrictEqual(42);
     });
 
     test("nested", async () => {

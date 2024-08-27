@@ -1,11 +1,10 @@
 import sleep from "./sleep";
+import { describe, test, expect } from "vitest";
 
 describe("sleep", () => {
   test("returns a promise", () => {
     const sleepPromise = sleep(1);
-    expect(sleepPromise.then).toBeTruthy();
-    expect(sleepPromise.catch).toBeTruthy();
-    expect(sleepPromise.finally).toBeTruthy();
+    expect(sleepPromise instanceof Promise).toBe(true);
   });
 
   describe("executes after delay", () => {
@@ -21,47 +20,48 @@ describe("sleep", () => {
       expect(Date.now() - now).toBeGreaterThan(25);
     });
 
-    test("delay of 0", (done) => {
+    test("delay of 0", async () => {
       expect.assertions(3);
       let i = 0;
       expect(i).toBe(0);
-      sleep(0).then(() => {
-        i++;
-        expect(i).toBe(2);
-        done();
-      });
+
       i++;
       expect(i).toBe(1);
+
+      await sleep(0);
+      i++;
+      expect(i).toBe(2);
     });
 
-    test("delay bigger than 0", (done) => {
+    test("delay bigger than 0", async () => {
       expect.assertions(3);
       let i = 0;
       expect(i).toBe(0);
-      sleep(50).then(() => {
-        i++;
-        expect(i).toBe(2);
-        done();
-      });
+
       i++;
       expect(i).toBe(1);
+
+      await sleep(50);
+
+      i++;
+      expect(i).toBe(2);
     });
 
-    test("does not block other async operations", (done) => {
+    test("does not block other async operations", async () => {
       expect.assertions(4);
       let i = 0;
       expect(i).toBe(0);
-      sleep(50).then(() => {
-        i++;
-        expect(i).toBe(3);
-        done();
-      });
+
       setTimeout(() => {
         i++;
         expect(i).toBe(2);
       }, 25);
       i++;
       expect(i).toBe(1);
+
+      await sleep(50);
+      i++;
+      expect(i).toBe(3);
     });
   });
 });

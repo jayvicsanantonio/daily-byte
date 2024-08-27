@@ -1,4 +1,5 @@
 import curry from "./curry-iii";
+import { describe, test, expect } from "vitest";
 
 function multiply(...numbers) {
   return numbers.reduce((a, b) => a * b, 1);

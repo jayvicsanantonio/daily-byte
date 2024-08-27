@@ -1,5 +1,6 @@
 import Singleton from "./singleton";
 import Singleton2 from "./singleton";
+import { describe, test, expect } from "vitest";
 
 describe("singleton", () => {
   test("returns an object with the required method", () => {

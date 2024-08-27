@@ -1,4 +1,5 @@
 import get from "./get";
+import { describe, test, expect } from "vitest";
 
 describe("get", () => {
   test("empty object", () => {

@@ -1,4 +1,5 @@
 import groupBy from "./group-by";
+import { describe, test, expect } from "vitest";
 
 describe("groupBy", () => {
   test("empty array", () => {

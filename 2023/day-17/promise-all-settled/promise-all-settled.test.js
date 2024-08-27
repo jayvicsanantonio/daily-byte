@@ -1,4 +1,5 @@
 import promiseAllSettled from "./promise-all-settled";
+import { describe, test, expect } from "vitest";
 
 describe("promiseAllSettled", () => {
   test("empty input array", async () => {

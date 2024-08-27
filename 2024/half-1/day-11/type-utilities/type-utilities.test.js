@@ -6,6 +6,7 @@ import {
   isSymbol,
   isUndefined,
 } from "./type-utilities";
+import { describe, test, expect } from "vitest";
 
 describe("type-utilities", () => {
   describe("isBoolean", () => {

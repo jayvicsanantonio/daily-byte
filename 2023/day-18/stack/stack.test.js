@@ -1,4 +1,5 @@
 import Stack from "./stack";
+import { describe, test, expect } from "vitest";
 
 describe("Stack", () => {
   test("constructor", () => {

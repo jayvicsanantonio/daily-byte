@@ -1,4 +1,5 @@
 import "./function-bind";
+import { describe, test, expect } from "vitest";
 
 describe("Function.prototype.myBind", () => {
   const person = {

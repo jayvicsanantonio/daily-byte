@@ -1,4 +1,5 @@
 import "./square";
+import { describe, test, expect } from "vitest";
 
 describe("Array.prototype.square", () => {
   test("empty array", () => {

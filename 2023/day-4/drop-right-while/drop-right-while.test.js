@@ -1,4 +1,5 @@
 import dropRightWhile from "./drop-right-while";
+import { describe, test, expect } from "vitest";
 
 describe("dropRightWhile", () => {
   test("empty array", () => {

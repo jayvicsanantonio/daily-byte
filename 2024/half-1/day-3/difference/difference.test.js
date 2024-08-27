@@ -1,4 +1,5 @@
 import difference from "./difference";
+import { describe, test, expect } from "vitest";
 
 describe("difference", () => {
   test("empty input array", () => {

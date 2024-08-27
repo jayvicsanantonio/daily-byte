@@ -1,4 +1,5 @@
 import fill from "./fill";
+import { describe, test, expect } from "vitest";
 
 describe("fill", () => {
   test("empty array", () => {

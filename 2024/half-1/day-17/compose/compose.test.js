@@ -3,6 +3,7 @@ import compose from "./compose";
 const identity = (x) => x;
 const double = (x) => x * 2;
 const square = (x) => x * x;
+import { describe, test, expect } from "vitest";
 
 describe("compose", () => {
   test("returns a function", () => {

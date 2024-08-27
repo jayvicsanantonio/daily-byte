@@ -1,4 +1,5 @@
 import once from "./once";
+import { describe, test, expect } from "vitest";
 
 describe("once", () => {
   test("returns function", () => {

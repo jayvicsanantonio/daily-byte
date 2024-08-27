@@ -1,4 +1,5 @@
 import throttle from "./throttle";
+import { describe, test, expect } from "vitest";
 
 describe("throttle", () => {
   test("can be initialized", () => {

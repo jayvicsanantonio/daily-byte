@@ -1,4 +1,5 @@
 import promiseTimeout from "./promise-timeout";
+import { describe, test, expect } from "vitest";
 
 describe("promiseTimeout", () => {
   test("returns a promise", () => {

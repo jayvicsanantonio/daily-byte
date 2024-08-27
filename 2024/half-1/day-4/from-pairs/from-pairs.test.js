@@ -1,4 +1,5 @@
 import fromPairs from "./from-pairs";
+import { describe, test, expect } from "vitest";
 
 describe("fromPairs", () => {
   test("empty array", () => {

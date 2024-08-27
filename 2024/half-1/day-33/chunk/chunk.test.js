@@ -1,4 +1,5 @@
 import chunk from "./chunk";
+import { describe, test, expect } from "vitest";
 
 describe("chunk", () => {
   test("empty array", () => {

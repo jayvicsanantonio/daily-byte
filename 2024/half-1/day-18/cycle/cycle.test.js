@@ -1,4 +1,5 @@
 import cycle from "./cycle";
+import { describe, test, expect } from "vitest";
 
 describe("cycle", () => {
   test("returns function", () => {

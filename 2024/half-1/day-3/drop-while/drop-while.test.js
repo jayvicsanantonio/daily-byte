@@ -1,4 +1,5 @@
 import dropWhile from "./drop-while";
+import { describe, test, expect } from "vitest";
 
 describe("dropWhile", () => {
   test("empty array", () => {

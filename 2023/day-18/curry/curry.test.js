@@ -4,6 +4,7 @@ const empty = () => 0;
 const square = (a) => a * a;
 const add = (a, b) => a * b;
 const mulThree = (a, b, c) => a * b * c;
+import { describe, test, expect } from "vitest";
 
 describe("curry", () => {
   test("returns function", () => {

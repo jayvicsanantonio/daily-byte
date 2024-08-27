@@ -1,4 +1,5 @@
 import inRange from "./in-range";
+import { describe, test, expect } from "vitest";
 
 describe("inRange", () => {
   test("both `start` and `end` specified", () => {

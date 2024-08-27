@@ -1,4 +1,5 @@
 import "./function-call";
+import { describe, test, expect } from "vitest";
 
 describe("Function.prototype.myCall", () => {
   const person = {

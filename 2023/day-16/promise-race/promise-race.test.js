@@ -1,24 +1,32 @@
 import promiseRace from "./promise-race";
-// import promiseRace from './promiseRaceThen';
+import { describe, test, expect } from "vitest";
 
 describe("promiseRace", () => {
-  test("empty input array", (done) => {
-    expect.assertions(1);
+  test("returns a promise", () => {
     const promise = promiseRace([]);
     expect(promise).toBeInstanceOf(Promise);
-    promise.then(
-      (value) => {
-        expect(value).toBeTruthy();
-      },
-      (reason) => {
-        expect(reason).toBeTruthy();
-      }
-    );
-
-    setTimeout(() => {
-      done();
-    }, 10);
   });
+
+  test(
+    "empty input array",
+    new Promise((done) => {
+      expect.assertions(1);
+      const promise = promiseRace([]);
+      expect(promise).toBeInstanceOf(Promise);
+      promise.then(
+        (value) => {
+          expect(value).toBeTruthy();
+        },
+        (reason) => {
+          expect(reason).toBeTruthy();
+        }
+      );
+
+      setTimeout(() => {
+        done();
+      }, 10);
+    })
+  );
 
   describe("one promise", () => {
     describe("resolve", () => {

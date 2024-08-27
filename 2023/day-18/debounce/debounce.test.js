@@ -1,4 +1,5 @@
 import debounce from "./debounce";
+import { describe, test, expect } from "vitest";
 
 describe("debounce", () => {
   test("can be initialized", () => {

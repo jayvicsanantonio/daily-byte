@@ -1,4 +1,5 @@
 import functionLength from "./function-length";
+import { describe, test, expect } from "vitest";
 
 describe("functionLength", () => {
   test("no arguments", () => {

@@ -1,4 +1,5 @@
 import clamp from "./clamp";
+import { describe, test, expect } from "vitest";
 
 describe("clamp", () => {
   describe("within range", () => {

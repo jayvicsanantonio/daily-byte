@@ -1,4 +1,5 @@
 import "./array-at";
+import { describe, test, expect } from "vitest";
 
 describe("Array.prototype.myAt", () => {
   test("empty array", () => {

@@ -1,4 +1,5 @@
 import numberOfArguments from "./number-of-arguments";
+import { describe, test, expect } from "vitest";
 
 describe("numberOfArguments", () => {
   test("no arguments", () => {

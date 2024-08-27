@@ -1,5 +1,5 @@
 import promiseReject from "./promise-reject";
-// const promiseReject = Promise.reject.bind(Promise);
+import { describe, test, expect } from "vitest";
 
 describe("promiseReject", () => {
   describe("non-promise", () => {
@@ -7,7 +7,7 @@ describe("promiseReject", () => {
       expect.assertions(1);
       try {
         const p = promiseReject(1);
-        expect(p instanceof Promise).toBe(true);
+        expect(p).toBeInstanceOf(Promise);
         await p;
       } catch {}
     });
@@ -23,7 +23,7 @@ describe("promiseReject", () => {
       expect.assertions(1);
       try {
         const p = promiseReject(new Promise((resolve) => resolve(42)));
-        expect(p instanceof Promise).toBe(true);
+        expect(p).toBeInstanceOf(Promise);
         await p;
       } catch {}
     });
@@ -43,14 +43,17 @@ describe("promiseReject", () => {
       expect(p).rejects.toBe(42);
     });
 
-    test("use with catch", (done) => {
-      expect.assertions(1);
-      const p = promiseReject(42);
-      p.catch((err) => {
-        expect(err).toBe(42);
-        done();
-      });
-    });
+    test(
+      "use with catch",
+      new Promise((done) => {
+        expect.assertions(1);
+        const p = promiseReject(42);
+        p.catch((err) => {
+          expect(err).toBe(42);
+          done();
+        });
+      })
+    );
   });
 
   test("use with Promise.all()", async () => {

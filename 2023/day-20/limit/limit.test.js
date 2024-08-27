@@ -1,4 +1,5 @@
 import limit from "./limit";
+import { describe, test, expect } from "vitest";
 
 describe("limit", () => {
   test("returns function", () => {

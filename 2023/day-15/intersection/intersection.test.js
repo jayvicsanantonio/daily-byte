@@ -1,4 +1,5 @@
 import intersection from "./intersection";
+import { describe, test, expect } from "vitest";
 
 describe("intersection", () => {
   test("empty array", () => {

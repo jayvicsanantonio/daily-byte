@@ -1,4 +1,5 @@
 import "./function-apply";
+import { describe, test, expect } from "vitest";
 
 describe("Function.prototype.myApply", () => {
   const person = {

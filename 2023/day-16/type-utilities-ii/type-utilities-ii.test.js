@@ -4,6 +4,7 @@ import {
   isObject,
   isPlainObject,
 } from "./type-utilities-ii";
+import { describe, test, expect } from "vitest";
 
 describe("Type utilities for non-primitives", () => {
   describe("isArray", () => {

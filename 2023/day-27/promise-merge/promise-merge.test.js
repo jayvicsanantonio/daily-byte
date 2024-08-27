@@ -1,4 +1,5 @@
 import promiseMerge from "./promise-merge";
+import { describe, test, expect } from "vitest";
 
 describe("promiseMerge", () => {
   test("returns a promise", () => {

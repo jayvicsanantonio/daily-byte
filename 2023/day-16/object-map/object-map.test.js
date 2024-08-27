@@ -1,6 +1,7 @@
 import objectMap from "./object-map";
 
 const double = (x) => x * 2;
+import { describe, test, expect } from "vitest";
 
 describe("objectMap", () => {
   test("empty", () => {

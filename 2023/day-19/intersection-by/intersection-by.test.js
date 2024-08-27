@@ -1,4 +1,5 @@
 import intersectionBy from "./intersection-by";
+import { describe, test, expect } from "vitest";
 
 describe("intersectionBy", () => {
   test("empty arrays", () => {
@@ -45,7 +46,7 @@ describe("intersectionBy", () => {
     expect(intersectionBy(iteratee, arr1, arr2)).toEqual([{ id: 2 }]);
   });
 
-  it("different iteratee values", () => {
+  test("different iteratee values", () => {
     const arr1 = ["apple", "banana", "pear"];
     const arr2 = ["orange", "kiwi", "banana"];
     const arr3 = ["grape", "pear", "watermelon"];

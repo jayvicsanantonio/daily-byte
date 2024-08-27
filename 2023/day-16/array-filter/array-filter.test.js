@@ -12,6 +12,7 @@ const isThisProductEven = function (element) {
   return (element * this) % 2 === 0;
 };
 const isThisProductEvenArrowFn = (element) => (element * this) % 2 === 0;
+import { describe, test, expect } from "vitest";
 
 describe("Array.prototype.myFilter", () => {
   test("empty array", () => {

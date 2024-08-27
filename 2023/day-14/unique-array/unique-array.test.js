@@ -1,4 +1,5 @@
 import uniqueArray from "./unique-array";
+import { describe, test, expect } from "vitest";
 
 describe("uniqueArray", () => {
   test("empty array", () => {
