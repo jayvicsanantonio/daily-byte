@@ -3,7 +3,7 @@ export default function mean(array: number[]): number {
     return NaN;
   }
 
-  const total = array.reduce((accumulator, value) => accumulator + value);
+  const total = array.reduce((accumulator, value) => accumulator + value, 0);
 
   return total / array.length;
 }
