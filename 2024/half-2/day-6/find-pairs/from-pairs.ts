@@ -3,9 +3,9 @@ export default function fromPairs<T>(
 ): Record<string | number, T> {
   const result: Record<string, T> = {};
 
-  pairs.forEach(([key, value]) => {
+  for (const [key, value] of pairs) {
     result[key] = value;
-  });
+  }
 
   return result;
 }
