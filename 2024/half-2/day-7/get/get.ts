@@ -2,7 +2,7 @@ export default function get<T>(
   objectParam: Record<string, any>,
   pathParam: string | Array<string>,
   defaultValue?: T
-): Record<string, any> | undefined {
+): T {
   const paths = Array.isArray(pathParam) ? pathParam : pathParam.split(".");
   let currentPath: string | undefined = paths.shift() ?? "";
   let result: Record<string, any>;
@@ -17,8 +17,8 @@ export default function get<T>(
   }
 
   if (paths.length) {
-    return defaultValue ?? undefined;
+    return (defaultValue ?? undefined) as T;
   }
 
-  return defaultValue ?? result;
+  return (result === undefined ? defaultValue : result) as T;
 }
