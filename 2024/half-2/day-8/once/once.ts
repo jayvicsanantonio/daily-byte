@@ -1,4 +1,4 @@
-export default function once<T>(func: (this: any, args: Array<any>) => T) {
+export default function once<T>(func: (this: any, ...args: any[]) => T) {
   let value: T;
   let called: boolean = false;
   return function (...args) {
