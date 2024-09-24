@@ -1,13 +1,11 @@
-let instance: Map<string, any> | null = null;
+let globalInstance: Map<string, any> | null = null;
 
-class Singleton {
+export default {
   getInstance() {
-    if (instance === null) {
-      instance = new Map();
+    if (globalInstance === null) {
+      globalInstance = new Map();
     }
-    return instance;
-  }
-}
 
-const singleton = Object.freeze(new Singleton());
-export default singleton;
+    return globalInstance;
+  },
+};
