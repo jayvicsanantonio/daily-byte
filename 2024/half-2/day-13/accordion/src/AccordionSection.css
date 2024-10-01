@@ -1,0 +1,23 @@
+.accordion-section {
+  border: solid #e5e7eb;
+  border-width: 0 0 1px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.accordion-header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+
+
+  &:hover {
+    background-color: #e5e7eb;
+    cursor: pointer;
+  }
+}
+
+.accordion-content {
+  padding-inline: 1rem;
+}
