@@ -8,15 +8,22 @@ export default function App() {
     e.preventDefault();
 
     const formData = new FormData(e.currentTarget);
-    const { rows, columns } = Object.fromEntries(formData);
+    const rows = Number(formData.get("rows"));
+    const columns = Number(formData.get("columns"));
 
-    const newMatrix = Array.from({ length: rows }).map((_, row) => {
-      return Array.from({ length: columns }).map((_, column) =>
-        column % 2 === 0 ? rows * column + (row + 1) : rows * (column + 1) - row
+    const createMatrix = (rows: number, columns: number): number[][] => {
+      return Array.from({ length: rows }, (_, row) =>
+        Array.from({ length: columns }, (_, column) => {
+          // For even columns: rows * column + (row + 1)
+          // For odd columns: rows * (column + 1) - row
+          return column % 2 === 0
+            ? rows * column + (row + 1)
+            : rows * (column + 1) - row;
+        })
       );
-    });
+    };
 
-    console.log(newMatrix);
+    const newMatrix = createMatrix(rows, columns);
     setMatrix(newMatrix);
   };
 
@@ -31,20 +38,27 @@ export default function App() {
           <label htmlFor="columns">Column: </label>
           <input type="number" id="columns" name="columns" min={0} />
         </div>
-        <button type="submit" className="submit">
+        <button type="submit" className="submit" aria-label="Generate Table">
           Submit
         </button>
       </form>
       <div className="matrix-container">
-        {matrix.map((row, rowIndex) => (
-          <div key={rowIndex} className="row">
-            {row.map((cell, cellIndex) => (
-              <div key={cellIndex} className="cell">
-                {cell}
-              </div>
-            ))}
-          </div>
-        ))}
+        {matrix.length === 0 ? (
+          <p>
+            No matrix generated yet. Please input the number of rows and
+            columns.
+          </p>
+        ) : (
+          matrix.map((row, rowIndex) => (
+            <div key={`row-${rowIndex}`} className="row">
+              {row.map((cell, cellIndex) => (
+                <div key={`cell-${rowIndex}-${cellIndex}`} className="cell">
+                  {cell}
+                </div>
+              ))}
+            </div>
+          ))
+        )}
       </div>
     </div>
   );
