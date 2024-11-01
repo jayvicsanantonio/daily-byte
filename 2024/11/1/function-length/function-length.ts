@@ -1,3 +1,3 @@
-export default function functionLength(func: Function): number {
-  return func.length;
+export default function functionLength(fn: Function): number {
+  return fn.length;
 }
