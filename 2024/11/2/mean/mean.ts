@@ -9,6 +9,10 @@ export default function mean(array: Array<number>): number {
     return NaN;
   }
 
+  if (array.some((value) => !Number.isFinite(value))) {
+    return NaN;
+  }
+
   let result: number = 0;
   let length: number = array.length;
 
