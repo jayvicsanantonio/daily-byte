@@ -1,3 +1,9 @@
+/**
+ * Calculates the mean of an array of numbers.
+ *
+ * @param array - An array of numbers.
+ * @returns The mean of the array.
+ */
 export default function mean(array: Array<number>): number {
   if (array.length === 0) {
     return NaN;
