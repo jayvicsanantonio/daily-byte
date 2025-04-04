@@ -18,7 +18,7 @@ describe('numberOfArguments', () => {
   it('should return the correct count for multiple arguments', () => {
     expect(numberOfArguments(1, 2, 3)).toBe(3);
     expect(numberOfArguments('a', 'b', 'c', 'd')).toBe(4);
-    expect(numberOfArguments(1, 'a', null, {}, [])).toBe(5);
+    expect(numberOfArguments(1, 'a', null, {}, [], undefined)).toBe(6);
   });
 
   it('should handle various data types correctly', () => {
