@@ -1,0 +1,63 @@
+/* Accordion component styles */
+.accordion {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.accordionItem {
+  display: flex;
+  flex-direction: column;
+  row-gap: 4px;
+  padding: 4px 0;
+}
+
+.accordionItem:not(:first-child) {
+  border-top: 1px solid #eee;
+}
+
+.accordionItemTitle {
+  align-items: center;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-weight: 500;
+  padding: 4px;
+  justify-content: space-between;
+  text-align: start;
+  display: flex;
+}
+
+.accordionIcon {
+  border: solid currentcolor;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  height: 8px;
+  pointer-events: none;
+  transform: translateY(-2px) rotate(45deg);
+  width: 8px;
+  transition: transform 0.3s ease-out;
+}
+
+.accordionIconRotated {
+  transform: translateY(2px) rotate(-135deg);
+}
+
+.accordionItemContents {
+  font-size: 14px;
+  line-height: 1.2em;
+  min-width: 640px;
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease-out, padding 0.3s ease-out;
+  overflow: hidden;
+}
+
+.accordionItemContents.open {
+  grid-template-rows: 1fr;
+  padding: 4px;
+}
+
+.accordionItemContents > * {
+  min-height: 0;
+}

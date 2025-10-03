@@ -113,6 +113,7 @@ button:focus-visible {
   pointer-events: none;
   transform: translateY(-2px) rotate(45deg);
   width: 8px;
+  transition: transform 0.3s ease-out;
 }
 
 .accordion-icon--rotated {
@@ -122,6 +123,18 @@ button:focus-visible {
 .accordion-item-contents {
   font-size: 14px;
   line-height: 1.2em;
-  padding: 4px;
   min-width: 640px;
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease-out, padding 0.3s ease-out;
+  overflow: hidden;
+}
+
+.accordion-item-contents.open {
+  grid-template-rows: 1fr;
+  padding: 4px;
+}
+
+.accordion-item-contents > * {
+  min-height: 0;
 }
