@@ -16,13 +16,15 @@ export default function Accordion({ sections }: AccordionProps) {
   );
 
   const toggleSection = (value: string) => {
-    if (openSections.has(value)) {
-      openSections.delete(value);
+    const newOpenSections = new Set(openSections);
+
+    if (newOpenSections.has(value)) {
+      newOpenSections.delete(value);
     } else {
-      openSections.add(value);
+      newOpenSections.add(value);
     }
 
-    setOpenSections(new Set(openSections));
+    setOpenSections(newOpenSections);
   };
 
   return (
