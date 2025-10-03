@@ -4,7 +4,11 @@
       "Bash(git shortlog:*)",
       "Bash(git log:*)",
       "Bash(npm test)",
-      "Bash(mkdir:*)"
+      "Bash(mkdir:*)",
+      "Read(//Users/jayvicsanantonio/.claude/output-styles/**)",
+      "Bash(npm install:*)",
+      "Bash(pnpm add:*)",
+      "Bash(npx tsc:*)"
     ],
     "deny": [],
     "ask": []
